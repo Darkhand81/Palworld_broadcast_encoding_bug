@@ -12,6 +12,6 @@ In UTF-8 encoding, `\u00a0` is represented by the bytes `C2 A0`. But in ISO-8859
 
 So Palworld is mixing up two different encodings when receiving vs sending text data!
 
-I created this test script in Python to confirm things.  The script sends a raw rcon command to the server... It takes a test message, like "broadcast Hello world!", and splits it up. The "broadcast " (with the first space) part is sent with regular utf-8 encoding, but the rest of the spaces in the message are replaced with the raw binary-encoded A0 character to represent a space, instead of UTF-8.
+I created this test script in Python to confirm things.  The script sends a raw rcon command to the server... It takes a test message, like `broadcast Hello world!`, and splits it up. The `broadcast ` (with the first space) part is sent with regular utf-8 encoding, but the rest of the spaces in the message are replaced with the raw binary-encoded `A0` character to represent a space, instead of UTF-8.
 
 And it works!! We have here the world's first Palworld broadcast message with spaces!
