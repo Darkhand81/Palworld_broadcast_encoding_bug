@@ -1,5 +1,7 @@
 # A proof of concept workaround for the Palworld text broadcast bug
 
+![Palworld_Encoding_bug](https://github.com/Darkhand81/Palworld_broadcast_encoding_bug/assets/1334381/25cadc75-7da5-4419-b73f-861d2f799ad7)
+
 So for us dedicated server owners, it's been quite annoying to have a `broadcast` command, only to find that it doesn't quite work. Only the first word you send in the command is sent to the server.  So if you broadcast `Hello everyone!`, either over rcon or in-game, people only see `Hello`.
 
 At first, I thought that maybe the server was interpreting each word as an argument of the command, and only reading the first one.  But after some experimentation, I found it to be a text encoding mismatch!
