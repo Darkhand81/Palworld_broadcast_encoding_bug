@@ -23,7 +23,7 @@ def send_rcon_command(ip, port, password, command, message):
 
         # Construct our awesome workaround command with hex A0 for spaces in the message
         command_bytes = command.encode('utf-8') + b' '  # Initial command followed by a normal space
-        message_bytes = message.replace(' ', '\xa0').encode('latin-1')  # Replace message spaces with binary A0 and encode
+        message_bytes = message.replace(' ', '\xa0').encode('latin-1')  # Replace message spaces with hex A0 and encode
         final_command = command_bytes + message_bytes + b'\x00\x00'  # Final command with null termination
 
         # Send command
