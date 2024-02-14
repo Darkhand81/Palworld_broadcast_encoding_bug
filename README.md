@@ -8,7 +8,7 @@ At first, I thought that maybe the server was interpreting each word as an argum
 
 When I first tried working around this bug, I tried replacing regular spaces with the unicode non-breaking space character `\u00a0` (NBSP), to see if using an alternate space character might let us get around it.  But when I tried this, those spaces would get replaced with `Â ` (an 'A' with a circumflex accent followed by a space).
 
-In UTF-8 encoding, `\u00a0` is represented by the bytes `C2 A0`. But in ISO-8859-1 and Windows-1252 encodings, `C2` is `Â`, and `A0` is out non-breaking space! Hmm! Those are our characters we see!
+In UTF-8 encoding, `\u00a0` is represented by the bytes `C2 A0`. But in ISO-8859-1 and Windows-1252 encodings, `C2` is `Â`, and `A0` is a non-breaking space! Hmm! Those are the characters we see!
 
 So not only is Palworld not parsing regular spaces correctly, it's mixing up two different encodings when receiving vs sending text data!
 
