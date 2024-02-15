@@ -4,7 +4,7 @@
 
 So for us dedicated server owners, it's been quite annoying to have a `broadcast` command, only to find that it doesn't quite work. Only the first word you send in the command is sent to the server.  So if you broadcast `Hello everyone!`, either over rcon or in-game, people only see `Hello`.
 
-It seems as though the server is interpreting each word after the `broadcast` message as an argument, and only interpreting the first one. But after some experimentation, I found a workaround!
+It seems as though the server is interpreting each word after the `broadcast` command as an argument, and only adding the first one to the final string that gets sent out. But after some experimentation, I found a workaround!
 
 When I first tried working around this bug, I tried replacing regular spaces with the unicode non-breaking space character `\u00a0` (NBSP), to see if using an alternate space character might let us get around it.  While this didn't work, it pointed me in the right direction... When I tried this, those spaces would get replaced with `Â ` (an 'A' with a circumflex accent followed by a space).
 
